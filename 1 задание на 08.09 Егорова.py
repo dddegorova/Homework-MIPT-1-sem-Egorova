@@ -97,11 +97,28 @@ import numpy as np
 i = np.arange(10)
 print (np.add.reduce(i))
 
-#51
+#53
 import numpy as np
-i = np.zeros(10, [ ('position', [ ('x', float, 1),
-                                  ('y', float, 1)]),
-                   ('color',    [ ('r', float, 1),
-                                  ('g', float, 1),
-                                  ('b', float, 1)])])
-print(i)
+a = np.array([1.1, 1.2, 1.3], dtype=np.float32)
+a32 = a.astype(np.int32)
+
+#60
+import numpy as np
+def func(arr):
+    return np.any(np.all(arr == 0, axis=0))
+a1= np.array([[1, 0, 3],[4, 0, 6],[7, 0, 9]])
+a2 = np.array([[1, 2, 3],[4, 5, 6],[7, 8, 9]])
+print("Есть нулевые столбцы в а1:", func(a1), ", есть нулевые столбцы в а2:", func(a2))
+
+#72
+import numpy as np
+a = np.arange(9).reshape(3,3)
+a[[0,1]] = a[[1,0]]
+print(a)
+
+#83
+import numpy as np
+a = np.array([1,2,3,1,2,1,1,1])
+print(np.argmax(np.bincount(a)))
+
+
